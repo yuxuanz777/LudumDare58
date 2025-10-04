@@ -10,10 +10,10 @@ public class LibraryRowView : MonoBehaviour
     [SerializeField] TMP_Text valueText;
     [SerializeField] Button sellButton;
 
-    GameItem boundItem;
-    Action<GameItem> onSell;
+    GameItems boundItem;
+    Action<GameItems> onSell;
 
-    public void Bind(GameItem item, Action<GameItem> onSellCallback)
+    public void Bind(GameItems item, Action<GameItems> onSellCallback)
     {
         boundItem = item;
         onSell = onSellCallback;

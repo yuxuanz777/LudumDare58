@@ -6,4 +6,4 @@
 
 ## Progress
 1. First day fast prototype
-![alt text](image.png)
+![alt text](image-1.png)

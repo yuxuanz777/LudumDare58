@@ -10,10 +10,10 @@ public class MarketCardView : MonoBehaviour
     [SerializeField] TMP_Text tagText;
     [SerializeField] Button buyButton;
 
-    GameItem boundItem;
-    Action<GameItem> onBuy;
+    GameItems boundItem;
+    Action<GameItems> onBuy;
 
-    public void Bind(GameItem item, Action<GameItem> onBuyCallback, bool canAfford)
+    public void Bind(GameItems item, Action<GameItems> onBuyCallback, bool canAfford)
     {
         boundItem = item;
         onBuy = onBuyCallback;
