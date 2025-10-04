@@ -4,11 +4,11 @@ public static class NameGenerator
 {
     // Add a random roman numeral at the end for more fun 
 
-    static readonly string[] A = { "Elden", "Super", "Hollow", "Dark", "Cyber", "Monster", "Sradrew", "God of" };
-    static readonly string[] B = { "Ring", "Mario", "Knight", "Souls", "Punk", "Hunter", "Valley", "War" };
+    static readonly string[] A = { "Elden", "Super", "Hollow", "Dark", "Cyber", "Monster", "Sradrew", "God of", "Call of", "Mid Seier's" };
+    static readonly string[] B = { "Ring", "Mario", "Knight", "Souls", "Punk", "Hunter", "Valley", "War", "Duty", "Civilization" };
     static readonly string[] C = { "Simulator", "Odessey", "Remastered", "2077", "Deluxe", "Origins", "DLC" };
-    static readonly string[] Genres = { "RPG", "Shooter", "Casual", "Strategy", "Indie" };
-    static readonly string[] RomanNumerals = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
+    static readonly string[] Genres = { "RPG", "Horror", "Puzzle", "Strategy", "Simulation" };
+    static readonly string[] RomanNumerals = { "I", "II", "III", "IV", "V", "VI", "VII" };
 
     public static string FunnyName(){
         string funnyName = $"{A[Random.Range(0, A.Length)]} {B[Random.Range(0, B.Length)]}";

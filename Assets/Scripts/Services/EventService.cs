@@ -11,16 +11,17 @@ public class EventService
 
         _pool.Add(new GameEvent("Steam Autumn Sale! All listed game -50%", () =>
         {
-            foreach (var item in market.Items)
+            foreach (var item in market._items)
                 item.price = Mathf.Max(1, item.price / 2);
             refreshMarketUI();
         }));
+        // priceFluctuation, ²»Ì«ºÃÓÃdebug
+        //_pool.Add(new GameEvent("A game is outdated, its value drops to 0!", () =>
+        //{
+        //    library.RandomZeroOneItem();
+        //    refreshLibraryUI();
+        //}));
 
-        _pool.Add(new GameEvent("A game is outdated, its value drops to 0!", () =>
-        {
-            library.RandomZeroOneItem();
-            refreshLibraryUI();
-        }));
         // bonusMoney
         _pool.Add(new GameEvent("You earn bonus from somewhere! +200$", () =>
         {

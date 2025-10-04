@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class LibraryService
 {
-    public IReadOnlyList<GameItems> Items => _items;
-    readonly List<GameItems> _items = new List<GameItems>();
+    //public IReadOnlyList<GameItems> Items => _items;
+    public List<GameItems> _items = new List<GameItems>();
 
-    public void Add(GameItems item) => _items.Add(item);
+    public void Add(GameItems item)
+    {
+        item.predictedDelta = Random.Range(-GameController.Instance.fluctuationPerTurn, GameController.Instance.fluctuationPerTurn);
+        _items.Add(item);
+    }
     public bool Remove(GameItems item) => _items.Remove(item);
 
     public int TotalValue()
@@ -21,8 +25,10 @@ public class LibraryService
     {
         for (int i = 0; i < _items.Count; i++)
         {
-            int d = Random.Range(minDelta, maxDelta);
+            int d = _items[i].predictedDelta;
             _items[i].value = Mathf.Max(0, _items[i].value + d);
+
+            _items[i].predictedDelta = Random.Range(minDelta, maxDelta);
         }
     }
 

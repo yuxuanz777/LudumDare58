@@ -3,21 +3,40 @@ using UnityEngine;
 
 public class MarketService
 {
-    public IReadOnlyList<GameItems> Items => _items;
-    readonly List<GameItems> _items = new List<GameItems>();
+    //public IReadOnlyList<GameItems> Items => _items;
+    public List<GameItems> _items = new List<GameItems>();
 
     public void Generate(int count)
     {
         _items.Clear();
         for (int i = 0; i < count; i++)
         {
-            _items.Add(new GameItems(
-                System.Guid.NewGuid().ToString(),
-                NameGenerator.FunnyName(),
-                Random.Range(50, 300),
-                Random.Range(50, 300),
-                NameGenerator.RandomGenre()
-            ));
+            string genre = NameGenerator.RandomGenre();
+            string id = System.Guid.NewGuid().ToString();
+            string name = NameGenerator.FunnyName();
+            int price = Random.Range(50, 300);
+            int baseValue = Random.Range(50, 300);
+            switch (genre)
+            {
+                case "RPG":
+                    _items.Add(new Game_RPG(id, name, price, baseValue));
+                    break;
+                case "Strategy":
+                    _items.Add(new Game_Strategy(id, name, price, baseValue, GameController.Instance._progress.CurrentTurn));
+                    break;
+                case "Puzzle":
+                    _items.Add(new Game_Puzzle(id, name, price, baseValue));
+                    break;
+                case "Simulation":
+                    _items.Add(new Game_Simulation(id, name, price, baseValue));
+                    break;
+                case "Horror":
+                    _items.Add(new Game_Horror(id, name, price, baseValue));
+                    break;
+                default:
+                    Debug.LogWarning($"Unknown genre: {genre}");
+                    break;
+            }
         }
     }
 

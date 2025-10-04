@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1754482874545977775}
   - component: {fileID: 8409385375055504560}
   - component: {fileID: 8442506505022482710}
+  - component: {fileID: 2904740608784043235}
   m_Layer: 5
   m_Name: LibraryGame
   m_TagString: Untagged
@@ -238,6 +239,20 @@ MonoBehaviour:
   tagText: {fileID: 4015988502143245601}
   valueText: {fileID: 2183864194837351610}
   sellButton: {fileID: 672798183698654139}
+--- !u!114 &2904740608784043235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666603949815555444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a7e5a1283e0b24897af89787013b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleUpFactor: 1.05
+  speed: 10
 --- !u!1 &3328001332687241361
 GameObject:
   m_ObjectHideFlags: 0
