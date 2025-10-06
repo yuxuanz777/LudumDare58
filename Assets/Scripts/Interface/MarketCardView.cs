@@ -18,7 +18,7 @@ public class MarketCardView : MonoBehaviour
         boundItem = item;
         onBuy = onBuyCallback;
         nameText.text = item.name;
-        priceText.text = $"Price: ${item.price}";
+        priceText.text = $"${item.price}";
         tagText.text = item.genre;
         buyButton.interactable = canAfford;
         buyButton.onClick.RemoveAllListeners();

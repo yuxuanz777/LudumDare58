@@ -24,6 +24,7 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         targetScale = originalScale * scaleUpFactor;
+        AudioManager.Instance.PlaySound(AudioManager.Instance.hoverSound);
     }
 
     public void OnPointerExit(PointerEventData eventData)

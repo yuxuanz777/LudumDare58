@@ -14,8 +14,9 @@ public class MarketService
             string genre = NameGenerator.RandomGenre();
             string id = System.Guid.NewGuid().ToString();
             string name = NameGenerator.FunnyName();
+            // Price and base value for Games
             int price = Random.Range(50, 300);
-            int baseValue = Random.Range(50, 300);
+            int baseValue = Random.Range(75, 275);
             switch (genre)
             {
                 case "RPG":

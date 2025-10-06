@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -13,14 +14,19 @@ public class MainMenuController : MonoBehaviour
 
     void Awake()
     {
+        AudioManager.Instance.PlayBGM(AudioManager.Instance.mainMenuBGM);
         if (ultimateLogo != null)
             ultimateLogo.SetActive(PlayerPrefs.GetInt(PersistentKeys.HasUltimateLogo, 0) == 1);
 
         if (startButton != null)
+        {
             startButton.onClick.AddListener(OnStartClicked);
+        }
 
         if (exitButton != null)
+        {
             exitButton.onClick.AddListener(OnExitClicked);
+        }
     }
 
     void OnDestroy()
@@ -29,6 +35,12 @@ public class MainMenuController : MonoBehaviour
         if (exitButton != null) exitButton.onClick.RemoveListener(OnExitClicked);
     }
 
-    void OnStartClicked() => SceneLoader.LoadGame();
-    void OnExitClicked() => SceneLoader.Quit();
+    void OnStartClicked() {
+        AudioManager.Instance.PlaySound(AudioManager.Instance.clickSound);
+        SceneLoader.LoadGame();
+    }
+    void OnExitClicked()
+    {
+        SceneLoader.Quit();
+    }
 }

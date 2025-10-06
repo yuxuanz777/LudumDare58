@@ -57,6 +57,7 @@ public class GameProgressService
         // 未达到目标 -> 失败一次
         if (libraryTotalValue < CurrentTargetValue)
         {
+            AudioManager.Instance.PlaySound(AudioManager.Instance.warningSound);
             _failStrikes++;
             string msg = GetFailMessage(_failStrikes);
             OnFailStrike?.Invoke(_failStrikes, msg);
@@ -91,7 +92,7 @@ public class GameProgressService
             case 1: return "The library police is watching you now!";
             case 2: return "The library police starts to criticize your game!";
             case 3: return "The library police gets REALLY ANGRY!";
-            default: return "The library police is furious!";
+            default: return " ";
         }
     }
 }

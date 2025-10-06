@@ -4,8 +4,8 @@ public static class NameGenerator
 {
     // Add a random roman numeral at the end for more fun 
 
-    static readonly string[] A = { "Elden", "Super", "Hollow", "Dark", "Cyber", "Monster", "Sradrew", "God of", "Call of", "Mid Seier's" };
-    static readonly string[] B = { "Ring", "Mario", "Knight", "Souls", "Punk", "Hunter", "Valley", "War", "Duty", "Civilization" };
+    static readonly string[] A = { "Elden", "Super", "Hollow", "Silent", "Cyber", "Monster", "Stardrew", "God of", "Baba Is", "Mid Seier's" };
+    static readonly string[] B = { "Ring", "Mario", "Knight", "Hill", "Punk", "Hunter", "Valley", "War", "You", "Civilization" };
     static readonly string[] C = { "Simulator", "Odessey", "Remastered", "2077", "Deluxe", "Origins", "DLC" };
     static readonly string[] Genres = { "RPG", "Horror", "Puzzle", "Strategy", "Simulation" };
     static readonly string[] RomanNumerals = { "I", "II", "III", "IV", "V", "VI", "VII" };
